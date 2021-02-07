@@ -1,0 +1,32 @@
+{
+ "add_total_row": 1,
+ "creation": "2020-10-18 22:53:02.252457",
+ "disable_prepared_report": 0,
+ "disabled": 1,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Shreelight",
+ "modified": "2021-01-27 15:32:40.199699",
+ "modified_by": "Administrator",
+ "module": "Last Records",
+ "name": "Reserved Stock Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\n    se.name as \"Stock Entry:Link/Stock Entry:150\",\n\tse.sales_order as \"Sales Order:Link/Sales Order:150\",\n\t(select customer_name from `tabSales Order` where name = se.sales_order) as \"Customer:Data:200\",\n    se_item.item_code as \"Item Code:Link/Item:120\",\n\tse_item.item_name as \"Item Name::120\",\n    se_item.item_group as \"Item Group:Link/Item Group:120\",\n\tse_item.qty as \"Qty:Float:100\",\n\tse_item.uom as \"UOM:Link/UOM:80\"\nfrom\n\t`tabStock Entry` se, `tabStock Entry Detail` se_item, `tabSales Order` so,`tabSales Order Item` so_item\nwhere\n\tso.name = se.sales_order and so.per_delivered != 100 and \n\tse.name = se_item.parent and se.docstatus = 1 and se.purpose = \"Material Transfer\"\norder by se.name desc;",
+ "ref_doctype": "Stock Entry",
+ "report_name": "Reserved Stock Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Purchase User"
+  }
+ ]
+}

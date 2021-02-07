@@ -89,7 +89,8 @@ app_license = "MIT"
 
 doc_events = {
 	"Sales Order": {
-		"on_submit": "last_records.last_records.doctype.smart_order.makeMR"
+		"on_submit": "last_records.last_records.doctype.smart_order_new.makeSE",
+		"on_cancel": "last_records.last_records.doctype.smart_order.canMR"
 	}
 }
 
