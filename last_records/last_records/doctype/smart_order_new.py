@@ -69,7 +69,8 @@ def makeSE(doc,method):
 				n_mr = frappe.get_doc({
 				"doctype": "Material Request",
 				"material_request_type": "Purchase",
-				"schedule_date": doc.delivery_date,
+				"schedule_date": doc.transaction_date,
+				"transaction_date": doc.transaction_date,
 				"against_sales_order": doc.name,
 				"items": [{
 					"item_code": i.item_code_with_bq,
@@ -77,7 +78,8 @@ def makeSE(doc,method):
 					"uom":i.uom,
 					"so_qty": i.qty,
 					"warehouse":doc.set_warehouse,
-					"sales_order":doc.name
+					"sales_order":doc.name,
+					"schedule_date": doc.transaction_date
 				}]
 				})
 				n_mr.insert(ignore_permissions=True)
@@ -89,7 +91,8 @@ def makeSE(doc,method):
 			n_mr = frappe.get_doc({
 			"doctype": "Material Request",
 			"material_request_type": "Purchase",
-			"schedule_date": doc.delivery_date,
+			"schedule_date": doc.transaction_date,
+			"transaction_date": doc.transaction_date,
 			"against_sales_order": doc.name,
 			"items": [{
 				"item_code": i.item_code_with_bq,
@@ -97,7 +100,8 @@ def makeSE(doc,method):
 				"uom":i.uom,
 				"so_qty": i.qty,
 				"warehouse":doc.set_warehouse,
-				"sales_order":doc.name
+				"sales_order":doc.name,
+				"schedule_date": doc.transaction_date
 			}]
 			})
 			n_mr.insert(ignore_permissions=True)

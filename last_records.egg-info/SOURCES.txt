@@ -19,6 +19,7 @@ last_records/config/docs.py
 last_records/last_records/__init__.py
 last_records/last_records/doctype/__init__.py
 last_records/last_records/doctype/smart_order.py
+last_records/last_records/doctype/smart_order_new.py
 last_records/last_records/doctype/last_purchase_table/__init__.py
 last_records/last_records/doctype/last_purchase_table/last_purchase_table.js
 last_records/last_records/doctype/last_purchase_table/last_purchase_table.json
@@ -32,6 +33,8 @@ last_records/last_records/doctype/last_sales_table/test_last_sales_table.py
 last_records/last_records/report/__init__.py
 last_records/last_records/report/customer_wise_transaction_summery/__init__.py
 last_records/last_records/report/customer_wise_transaction_summery/customer_wise_transaction_summery.json
+last_records/last_records/report/reserved_stock_report/__init__.py
+last_records/last_records/report/reserved_stock_report/reserved_stock_report.json
 last_records/templates/__init__.py
 last_records/templates/pages/__init__.py
 last_records/templates/pages/__pycache__/__init__.py
