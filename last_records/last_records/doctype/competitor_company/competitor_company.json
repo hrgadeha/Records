@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "autoname": "field:competitor_company",
+ "creation": "2021-05-08 19:48:13.173308",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "competitor_company",
+  "industry_type",
+  "section_break_2",
+  "address_html",
+  "column_break_4",
+  "contact_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "competitor_company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Competitor Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "<div class=\"clearfix\"></div>\n{% for(var i=0, l=addr_list.length; i&lt;l; i++) { %}\n&lt;div class=\"address-box\"&gt;\n\t<p class=\"h6\">\n\t\t{%= i+1 %}. {%= addr_list[i].address_title %}{% if(addr_list[i].address_type!=\"Other\") { %}\n\t\t<span class=\"text-muted\">({%= __(addr_list[i].address_type) %})</span>{% } %}\n\t\t{% if(addr_list[i].is_primary_address) { %}\n\t\t<span class=\"text-muted\">({%= __(\"Primary\") %})</span>{% } %}\n\t\t{% if(addr_list[i].is_shipping_address) { %}\n\t\t<span class=\"text-muted\">({%= __(\"Shipping\") %})</span>{% } %}\n\n\t\t<a class=\"btn btn-default btn-xs pull-right\" href=\"/app/Form/Address/{%= encodeURIComponent(addr_list[i].name) %}\" style=\"\">\n\t\t\t{%= __(\"Edit\") %}</a>\n\t</p>\n\t<p>{%= addr_list[i].display %}</p>\n\n{% } %}\n{% if(!addr_list.length) { %}\n<p class=\"text-muted small\">{%= __(\"No address added yet.\") %}</p>\n{% } %}\n<p><button class=\"btn btn-xs btn-default btn-address\">{{ __(\"New Address\") }}</button></p>",
+   "fieldname": "address_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "industry_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Industry Type",
+   "options": "Industry Type",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-05-08 23:45:07.102361",
+ "modified_by": "Administrator",
+ "module": "Last Records",
+ "name": "Competitor Company",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
